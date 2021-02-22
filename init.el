@@ -15,6 +15,7 @@
 	       swiper
 	       counsel
 	       smartparens
+	       popwin
 	       ;; --- Major Mode ---
 	       js2-mode
 	       ;; --- Minor Mode ---
@@ -53,6 +54,20 @@
 (require 'hungry-delete)
 (global-hungry-delete-mode)
 (setq hungry-delete-join-reluctantly t)
+
+;; popwin is a popup window manager for Emacs which makes you free from the hell of annoying buffers 
+(require 'popwin)
+(popwin-mode 1)
+
+;; 其他编辑器修改文件后，自动从硬盘加载
+(global-auto-revert-mode t) 
+
+;; 缩写补全
+(abbrev-mode t)
+(define-abbrev-table 'global-abbrev-table'(
+					   ("k8s" "kubernetes")
+					   ))
+
 
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
