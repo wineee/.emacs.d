@@ -1,0 +1,10 @@
+** js-2 mod 
+#+BEGIN_SRC emacs-lisp
+;; js-2 mode
+(setq auto-mode-alist
+      (append
+       '(("\\.js\\'" . js2-mode))
+       auto-mode-alist))
+
+(require 'nodejs-repl)
+#+END_SRC

@@ -2,7 +2,7 @@
 (setq make-backup-files nil)
 
 ;; 关闭自动保存文件
-;; (setq auto-save-default nil)
+(setq auto-save-default nil)
 
 ;; 设置一个别名将其简化为只输入 (y or n)
 (fset 'yes-or-no-p 'y-or-n-p)

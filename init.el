@@ -23,10 +23,7 @@
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
 
-;; js-2 mode
-(setq auto-mode-alist
-      (append
-       '(("\\.js\\'" . js2-mode))
-       auto-mode-alist))
-
-(require 'nodejs-repl)
+;; Org-mode 管理 Emacs 配置
+(require 'org-install)
+(require 'ob-tangle)
+(org-babel-load-file (expand-file-name "org-file-name.org" user-emacs-directory))

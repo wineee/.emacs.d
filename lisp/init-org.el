@@ -8,8 +8,4 @@
 ;; 设置 org-agenda 打开快捷键
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-;; (require 'org-install)
-;; (require 'ob-tangle)
-;; (org-babel-load-file (expand-file-name "org-file-name.org" user-emacs-directory))
-
 (provide 'init-org)
