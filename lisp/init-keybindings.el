@@ -3,12 +3,15 @@
 
 (global-set-key (kbd "C-x r") 'recentf-open-files)
 
+(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "M-s e") 'iedit-mode)
+
 ;; 重新缩进所选区域的代码
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
 (global-set-key (kbd "s-/") 'hippie-expand)
 
-(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "\C-s") 'swiper)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 (global-set-key (kbd "<f6>") 'ivy-resume)
 (global-set-key (kbd "M-x") 'counsel-M-x)

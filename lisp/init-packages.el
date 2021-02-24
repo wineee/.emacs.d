@@ -18,8 +18,12 @@
 	       popwin
 	       ;; --- Major Mode ---
 	       js2-mode
+	       go-mode
+	       web-mode
+	       
 	       ;; --- Minor Mode ---
 	       nodejs-repl
+	       js2-refactor
 	       exec-path-from-shell
 	       ;; --- Themes ---
 	       monokai-theme
@@ -39,10 +43,6 @@
     (dolist (pkg my/packages)
       (when (not (package-installed-p pkg))
 	(package-install pkg))))
-
-;; Find Executable Path on OS X
-;;(when (memq window-system '(mac ns))
-;; ((exec-path-from-shell-initialize))
 
 ;; 删除连续多个空格
 (require 'hungry-delete)
