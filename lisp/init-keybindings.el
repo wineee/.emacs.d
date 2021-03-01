@@ -5,6 +5,7 @@
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "M-s e") 'iedit-mode)
+;; (global-set-key (kbd "M-s o") ')
 
 ;; 重新缩进所选区域的代码
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)

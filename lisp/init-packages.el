@@ -16,6 +16,8 @@
 	       counsel
 	       smartparens
 	       popwin
+	       expand-region
+	       iedit
 	       ;; --- Major Mode ---
 	       js2-mode
 	       go-mode
