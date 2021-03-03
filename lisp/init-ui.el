@@ -7,6 +7,9 @@
 ;; 关闭工具栏，tool-bar-mode 即为一个 Minor Mode
 (tool-bar-mode -1)
 
+;; 关闭菜单栏
+(menu-bar-mode -1)
+
 ;; 关闭文件滚动条
 (scroll-bar-mode -1)
 
@@ -15,6 +18,9 @@
 
 ;; 高亮当前行
 (global-hl-line-mode 1)
+
+;; 标题栏显示文件及路径信息
+(setq frame-title-format "%b [%I] %f GNU/Emacs")
 
 ;; 安装主题
 (add-to-list 'my/packages 'monokai-theme)

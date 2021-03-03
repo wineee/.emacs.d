@@ -29,7 +29,13 @@
 	       exec-path-from-shell
 	       ;; --- Themes ---
 	       monokai-theme
-	       ;; solarized-theme
+	       ;; --- Pkg Maneger
+	       quelpa
+	       ;; for eaf
+	       ctable
+	       deferred
+	       epc
+	       s
 	       ) "Default packages")
 
 (setq package-selected-packages my/packages)
@@ -54,5 +60,13 @@
 ;; popwin is a popup window manager for Emacs which makes you free from the hell of annoying buffers 
 (require 'popwin)
 (popwin-mode 1)
+
+(require 'quelpa)
+(quelpa '(eaf :fetcher github
+              :repo  "manateelazycat/emacs-application-framework"
+              :files ("*")))
+
+(add-to-list 'load-path "~/.emacs.d/quelpa/build/eaf")
+(require 'eaf)
 
 (provide 'init-packages)

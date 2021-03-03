@@ -94,4 +94,11 @@
   (call-interactively 'occur))
 (global-set-key (kbd "M-s o") 'occur-dwim)
 
+;; 自动切换透明度
+(defun rew-toggle-frame-transparency ()
+  (interactive)
+  (if (equal (frame-parameter nil 'alpha) 100)
+      (set-frame-parameter nil 'alpha '(90 . 85))
+    (set-frame-parameter nil 'alpha 100)))
+
 (provide 'init-better-defaults)
