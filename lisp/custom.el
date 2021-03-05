@@ -7,6 +7,7 @@
  '(company-minimum-prefix-length 2)
  '(custom-safe-themes
    '("d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" default))
+ '(org-agenda-files nil)
  '(package-selected-packages '(eaf haskell-mode company)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

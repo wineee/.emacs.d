@@ -18,6 +18,9 @@
 	       popwin
 	       expand-region
 	       iedit
+	       helm-ag
+	       auto-yasnippet
+	       
 	       ;; --- Major Mode ---
 	       js2-mode
 	       go-mode
@@ -27,6 +30,9 @@
 	       nodejs-repl
 	       js2-refactor
 	       exec-path-from-shell
+	       org-pomodoro
+	       flycheck
+	       
 	       ;; --- Themes ---
 	       monokai-theme
 	       ;; --- Pkg Maneger
@@ -37,6 +43,7 @@
 	       epc
 	       s
 	       ) "Default packages")
+
 
 (setq package-selected-packages my/packages)
 
@@ -61,12 +68,18 @@
 (require 'popwin)
 (popwin-mode 1)
 
-(require 'quelpa)
-(quelpa '(eaf :fetcher github
-              :repo  "manateelazycat/emacs-application-framework"
-              :files ("*")))
+;; (require 'quelpa)
+;; (quelpa '(eaf :fetcher github
+;;              :repo  "manateelazycat/emacs-application-framework"
+;;              :files ("*")))
 
-(add-to-list 'load-path "~/.emacs.d/quelpa/build/eaf")
-(require 'eaf)
+;; (add-to-list 'load-path "~/.emacs.d/quelpa/build/eaf")
+;; (require 'eaf)
+
+(add-hook 'js2-mode-hook 'flycheck-mode)
+
+;; yasnippet 是一个代码块补全的插件
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'init-packages)

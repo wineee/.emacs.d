@@ -7,6 +7,9 @@
 (global-set-key (kbd "M-s e") 'iedit-mode)
 ;; (global-set-key (kbd "M-s o") ')
 
+;; 命令 行搜索工具 ag
+(global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
+
 ;; 重新缩进所选区域的代码
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 
@@ -39,5 +42,12 @@
             (define-key js-mode-map (kbd "C-c C-c") 'nodejs-repl-send-buffer)
             (define-key js-mode-map (kbd "C-c C-l") 'nodejs-repl-load-file)
             (define-key js-mode-map (kbd "C-c C-z") 'nodejs-repl-switch-to-repl)))
+
+;; 在 Company-mode 中使用 C-n 与 C-p 来选择补全项
+(with-eval-after-load 'company
+  (define-key company-active-map (kbd "M-n") nil)
+  (define-key company-active-map (kbd "M-p") nil)
+  (define-key company-active-map (kbd "C-n") #'company-select-next)
+  (define-key company-active-map (kbd "C-p") #'company-select-previous))
 
 (provide 'init-keybindings)
