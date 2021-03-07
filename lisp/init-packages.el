@@ -20,6 +20,14 @@
 	       iedit
 	       helm-ag
 	       auto-yasnippet
+	       ;; --- evil ---
+	       evil
+	       ;;  evil-leader
+	       ;;  window-numbering
+	       ;; evil-surround
+	       ;; evil-nerd-commenter
+	       which-key
+	       ;; powerline
 	       
 	       ;; --- Major Mode ---
 	       js2-mode
@@ -37,6 +45,7 @@
 	       monokai-theme
 	       ;; --- Pkg Maneger
 	       quelpa
+
 	       ;; for eaf
 	       ctable
 	       deferred
@@ -59,6 +68,17 @@
       (when (not (package-installed-p pkg))
 	(package-install pkg))))
 
+;; vim like
+(evil-mode 1) 
+;; Insert State -> Emacs State 
+;; (setq evil-leader/set-key-disable-insert-state-bindings 1)
+
+;;(evil-leader/set-key
+
+;;使用 Leader Key 与数字键的组合来在多个窗口之间进行跳转
+;; (window-numbering-mode 1)
+
+(which-key-mode 1)
 ;; 删除连续多个空格
 (require 'hungry-delete)
 (global-hungry-delete-mode)
@@ -79,7 +99,7 @@
 (add-hook 'js2-mode-hook 'flycheck-mode)
 
 ;; yasnippet 是一个代码块补全的插件
-(yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)
+;; (yas-reload-all)
+;; (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'init-packages)

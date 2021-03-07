@@ -1,9 +1,14 @@
 * Emacs配置
-** TODO 学习子龙山人的配置                                      :learn:emacs:
-#+TODO: TODO | DONE
+** TODO
+#+TODO: 学习子龙山人的配置 TODO | DONE
 # TODO: | FIXED
 #+TODO: | CANCELED
 
+
+** 学习资料
+
+[步步为营，零秒精通 Emacs](https://emacs-china.org/t/emacs/11413)
+[Org使用手册](https://grass.show/omegat/target/Org%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C(%E5%AE%8C%E6%95%B4%E7%89%88).html)
 
 ** 快捷键使用说明 
 M-s o occur-dwim 显示变量或函数的定义
@@ -21,3 +26,5 @@ C-c p s 使用 helm-ag 搜索
 (add-to-list~AA 'path~AA 'xxx~AA)
 使用 aya-create 
 使用 aya-expand 产生新公式
+
+** org-mode 使用技巧 

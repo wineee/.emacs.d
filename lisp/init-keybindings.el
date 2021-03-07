@@ -3,6 +3,8 @@
 
 (global-set-key (kbd "C-x r") 'recentf-open-files)
 
+(global-set-key (kbd "C-w") 'backward-kill-word)
+
 (global-set-key (kbd "C-=") 'er/expand-region)
 (global-set-key (kbd "M-s e") 'iedit-mode)
 ;; (global-set-key (kbd "M-s o") ')
