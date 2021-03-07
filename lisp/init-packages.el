@@ -5,71 +5,8 @@
 		      ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
 ;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
 
-(require 'cl)
-;; Add Packages
-(defvar my/packages '(
-	       ;; --- Auto-completion ---
-	       company
-	       ;; --- Better Editor ---
-	       hungry-delete
-	       swiper
-	       counsel
-	       smartparens
-	       popwin
-	       expand-region
-	       iedit
-	       helm-ag
-	       auto-yasnippet
-	       ;; --- evil ---
-	       evil
-	       ;;  evil-leader
-	       ;;  window-numbering
-	       ;; evil-surround
-	       ;; evil-nerd-commenter
-	       which-key
-	       ;; powerline
-	       
-	       ;; --- Major Mode ---
-	       js2-mode
-	       go-mode
-	       web-mode
-	       
-	       ;; --- Minor Mode ---
-	       nodejs-repl
-	       js2-refactor
-	       exec-path-from-shell
-	       org-pomodoro
-	       flycheck
-	       
-	       ;; --- Themes ---
-	       monokai-theme
-	       ;; --- Pkg Maneger
-	       quelpa
-
-	       ;; for eaf
-	       ctable
-	       deferred
-	       epc
-	       s
-	       ) "Default packages")
-
-
-(setq package-selected-packages my/packages)
-
-(defun my/packages-installed-p ()
-    (loop for pkg in my/packages
-	  when (not (package-installed-p pkg)) do (return nil)
-	  finally (return t)))
-
-(unless (my/packages-installed-p)
-    (message "%s" "Refreshing package database...")
-    (package-refresh-contents)
-    (dolist (pkg my/packages)
-      (when (not (package-installed-p pkg))
-	(package-install pkg))))
-
 ;; vim like
-(evil-mode 1) 
+;; (evil-mode 1) 
 ;; Insert State -> Emacs State 
 ;; (setq evil-leader/set-key-disable-insert-state-bindings 1)
 
