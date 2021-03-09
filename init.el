@@ -16,13 +16,6 @@
 
 (load-file custom-file)
 
-
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-;; enable this if you want `swiper' to use it
-;; (setq search-default-mode #'char-fold-to-regexp)
-
 ;; Org-mode 管理 Emacs 配置
 (require 'org-install)
 (require 'ob-tangle)

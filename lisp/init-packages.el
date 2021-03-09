@@ -3,27 +3,96 @@
      (package-initialize)
      (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
 		      ("melpa" . "http://elpa.emacs-china.org/melpa/"))))
-;; 注意 elpa.emacs-china.org 是 Emacs China 中文社区在国内搭建的一个 ELPA 镜像
+;; Emacs China 中文社区在国内搭建的一个 ELPA 镜像
 
-;; vim like
-;; (evil-mode 1) 
-;; Insert State -> Emacs State 
-;; (setq evil-leader/set-key-disable-insert-state-bindings 1)
+(require 'cl)
+;; Add Packages
+(defvar my/packages '( 		      
+	       ;; --- Auto-completion ---
+	       company
+	       ;; --- Better Editor ---
+	       hungry-delete
+	       swiper
+	       counsel
+	       smartparens
+	       popwin
+	       expand-region
+	       iedit
+	       helm-ag
+	       auto-yasnippet
+	       ;; --- evil ---
+	       evil
+	       ;;  evil-leader
+	       ;;  window-numbering
+	       ;; evil-surround
+	       ;; evil-nerd-commenter
+	       which-key
+	       ;; powerline
+	       
+	       ;; --- Major Mode ---
+	       js2-mode
+	       go-mode
+	       web-mode
+	       
+	       ;; --- Minor Mode ---
+	       nodejs-repl
+	       js2-refactor
+	       exec-path-from-shell
+	       org-pomodoro
+	       flycheck
+	       
+	       ;; --- Themes ---
+	       monokai-theme
+	       ;; --- Pkg Maneger
+	       quelpa
 
-;;(evil-leader/set-key
+	       ;; for eaf
+	       ctable
+	       deferred
+	       epc
+	       s
 
-;;使用 Leader Key 与数字键的组合来在多个窗口之间进行跳转
-;; (window-numbering-mode 1)
+	       use-package
+	       ) "Default packages")
 
-(which-key-mode 1)
+
+(setq package-selected-packages my/packages)
+
+(defun my/packages-installed-p ()
+    (loop for pkg in my/packages
+	  when (not (package-installed-p pkg)) do (return nil)
+	  finally (return t)))
+
+(unless (my/packages-installed-p)
+    (message "%s" "Refreshing package database...")
+    (package-refresh-contents)
+    (dolist (pkg my/packages)
+      (when (not (package-installed-p pkg))
+	(package-install pkg))))
+
+
+(use-package popwin
+  :config
+  (popwin-mode 1))
+
+(use-package which-key
+  :config
+  (which-key-mode 1))
+
 ;; 删除连续多个空格
-(require 'hungry-delete)
-(global-hungry-delete-mode)
-(setq hungry-delete-join-reluctantly t)
+(use-package hungry-delete
+  :config
+  (global-hungry-delete-mode)
+  (setq hungry-delete-join-reluctantly t))
 
-;; popwin is a popup window manager for Emacs which makes you free from the hell of annoying buffers 
-(require 'popwin)
-(popwin-mode 1)
+
+
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+;; enable this if you want `swiper' to use it
+;; (setq search-default-mode #'char-fold-to-regexp)
+
 
 ;; (require 'quelpa)
 ;; (quelpa '(eaf :fetcher github
