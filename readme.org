@@ -1,4 +1,5 @@
 * Emacs配置
+
 ** TODO
 #+TODO: 学习子龙山人的配置 TODO | DONE
 # TODO: | FIXED
@@ -7,15 +8,15 @@
 
 ** 学习资料
 
-[步步为营，零秒精通 Emacs](https://emacs-china.org/t/emacs/11413)
-[Org使用手册](https://grass.show/omegat/target/Org%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C(%E5%AE%8C%E6%95%B4%E7%89%88).html)
+- [步步为营，零秒精通 Emacs](https://emacs-china.org/t/emacs/11413)
+- [Org使用手册](https://grass.show/omegat/target/Org%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C(%E5%AE%8C%E6%95%B4%E7%89%88).html)
 
 ** 快捷键使用说明 
-M-s o occur-dwim 显示变量或函数的定义
-C-=   expand-region 选中当前代码块
-M-s e iedit 同时编辑多个区域(M-s搜索，按e可以修改，C-=选中，M-s e修改)
-C-x C-q 就可以直接在 Dired Mode 中进行编辑
-C-c p s 使用 helm-ag 搜索
+- M-s o occur-dwim 显示变量或函数的定义
+- C-=   expand-region 选中当前代码块
+- M-s e iedit 同时编辑多个区域(M-s搜索，按e可以修改，C-=选中，M-s e修改)
+- C-x C-q 就可以直接在 Dired Mode 中进行编辑
+- C-c p s 使用 helm-ag 搜索
 
 ** 使用技巧
 如果需要创建
