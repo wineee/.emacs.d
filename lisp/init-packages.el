@@ -7,9 +7,10 @@
 
 (require 'cl)
 ;; Add Packages
-(defvar my/packages '( 		      
-	       ;; --- Auto-completion ---
-	       company
+(defvar my/packages '(
+		      ;; --- Auto-completion ---
+		      company
+		      rainbow-delimiters
 	       ;; --- Better Editor ---
 	       hungry-delete
 	       swiper
@@ -22,6 +23,7 @@
 	       auto-yasnippet
 
 	       which-key
+	       nyan-mode
 	       ;; powerline
 	       
 	       ;; --- Major Mode ---
@@ -38,6 +40,7 @@
 	       
 	       ;; --- Themes ---
 	       monokai-theme
+	       solarized-theme
 	       ;; --- Pkg Maneger
 	       quelpa
 
@@ -84,6 +87,7 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
+
 ;; enable this if you want `swiper' to use it
 ;; (setq search-default-mode #'char-fold-to-regexp)
 
@@ -115,8 +119,17 @@
 
 (add-hook 'js2-mode-hook 'flycheck-mode)
 
+(add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'emacs-lisp-mode-hook #'nyan-mode)
+
+
+;;(setq mode-line-format
+;;      (list
+;;       '(:eval (list (nyan-create)))
+;;       ))
+
 ;; yasnippet 是一个代码块补全的插件
-;; (yas-reload-all)
-;; (add-hook 'prog-mode-hook #'yas-minor-mode)
+;;(yas-reload-all)
+;;(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'init-packages)
