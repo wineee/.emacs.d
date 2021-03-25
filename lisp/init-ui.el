@@ -23,8 +23,12 @@
 (setq frame-title-format "%b [%I] %f GNU/Emacs")
 
 ;; 安装主题
-(load-theme 'monokai 1)
+;; (load-theme 'monokai 1)
 ;; (load-theme 'solarized-dark t)
+(use-package kaolin-themes
+  :config
+  (load-theme 'kaolin-bubblegum t)
+  (kaolin-treemacs-theme))
 
 ;; 我们可以用下面代码将 Emacs 设置为开启默认全屏，
 ;; (setq initial-frame-alist (quote ((fullscreen . maximized))))

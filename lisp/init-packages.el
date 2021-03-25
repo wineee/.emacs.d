@@ -8,23 +8,20 @@
 (require 'cl)
 ;; Add Packages
 (defvar my/packages '(
-		      ;; --- Auto-completion ---
-		      company
-		      rainbow-delimiters
+	       ;; --- Auto-completion ---
+	       company
+	       rainbow-delimiters
 	       ;; --- Better Editor ---
-	       hungry-delete
-	       swiper
-	       counsel
-	       smartparens
-	       popwin
-	       expand-region
-	       iedit
-	       helm-ag
+	       hungry-delete swiper
+	       counsel smartparens
+	       popwin expand-region
+	       iedit helm-ag
 	       auto-yasnippet
 
-	       which-key
-	       nyan-mode
+	       which-key 
 	       ;; powerline
+	       dired-ranger
+	       ranger
 	       
 	       ;; --- Major Mode ---
 	       js2-mode
@@ -41,14 +38,14 @@
 	       ;; --- Themes ---
 	       monokai-theme
 	       solarized-theme
+	       kaolin-themes
+	       nyan-mode
+	       all-the-icons
 	       ;; --- Pkg Maneger
 	       quelpa
 
 	       ;; for eaf
-	       ctable
-	       deferred
-	       epc
-	       s
+	       ctable deferred epc s
 
 	       use-package
 	       ) "Default packages")
@@ -71,6 +68,13 @@
 (use-package popwin
   :config
   (popwin-mode 1))
+
+(use-package dired-ranger
+  :ensure t
+  :bind (:map dired-mode-map
+              ("W" . dired-ranger-copy)
+              ("X" . dired-ranger-move)
+              ("Y" . dired-ranger-paste)))
 
 (use-package which-key
   :config
