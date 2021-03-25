@@ -10,7 +10,11 @@
 (require 'init-better-defaults)
 (require 'init-org)
 (require 'init-keybindings)
-
+(require 'init-eaf)
+(require 'init-dired)
+(require 'init-meow)
+(require 'init-music)
+(require 'init-nox)
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 

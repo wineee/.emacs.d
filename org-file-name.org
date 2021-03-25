@@ -41,3 +41,4 @@
 
 (global-set-key (kbd "M-s i") 'counsel-imenu)
 #+END_SRC
+** python mode

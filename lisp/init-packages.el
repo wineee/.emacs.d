@@ -22,7 +22,7 @@
 	       ;; powerline
 	       dired-ranger
 	       ranger
-	       
+	       meow
 	       ;; --- Major Mode ---
 	       js2-mode
 	       go-mode
@@ -48,6 +48,10 @@
 	       ctable deferred epc s
 
 	       use-package
+
+	       request
+
+	       magit
 	       ) "Default packages")
 
 (setq package-selected-packages my/packages)

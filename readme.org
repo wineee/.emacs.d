@@ -6,6 +6,11 @@
 #+TODO: | CANCELED
 
 
+** 安装依赖
+
+yay -S the_silver_searcher
+
+
 ** 学习资料
 
 - [步步为营，零秒精通 Emacs](https://emacs-china.org/t/emacs/11413)
