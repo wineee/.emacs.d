@@ -8,5 +8,7 @@
 ;; Hidden files (e.g. dotfiles) can be shown or hidden by pressing zh
 (setq ranger-show-hidden t)
 
+(setq ranger-parent-depth 2)
+
 
 (provide 'init-dired)

@@ -27,7 +27,7 @@
 	       js2-mode
 	       go-mode
 	       web-mode
-	       
+	       elpy
 	       ;; --- Minor Mode ---
 	       nodejs-repl
 	       js2-refactor
@@ -46,11 +46,12 @@
 
 	       ;; for eaf
 	       ctable deferred epc s
-
 	       use-package
-
+	       ;; nox need
+	       posframe
+	       ;; netease music need
 	       request
-
+	       ;; git manger
 	       magit
 	       ) "Default packages")
 
