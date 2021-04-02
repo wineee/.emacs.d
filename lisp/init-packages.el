@@ -1,5 +1,4 @@
-(require 'cl)
-;; Add Packages
+
 (defvar my/packages '(
 	       ;; --- Auto-completion ---
 	       company
@@ -47,22 +46,12 @@
 	       ) "Default packages")
 (setq package-selected-packages my/packages)
 
-; (defun my/packages-installed-p()
-;    (loop for pkg in my/packages
-; 	  when (not (package-installed-p pkg)) do (return nil)
-; 	  finally (return t)))
+;; (require-package 'el-get)
 
-; (unless (my/packages-installed-p)
-;    (message "%s" "Refreshing package database...")
-;    (package-refresh-contents)
-;    (dolist (pkg my/packages)
-;      (when (not (package-installed-p pkg))
-; 	(package-install pkg))))
-
-
-(require-package 'el-get)
+;; (setq use-package-always-ensure t)
 
 (use-package popwin
+  :ensure t
   :config
   (popwin-mode 1))
 
@@ -74,24 +63,25 @@
               ("Y" . dired-ranger-paste)))
 
 (use-package which-key
+  :ensure t
   :config
   (which-key-mode 1))
 
 ;; 删除连续多个空格
 (use-package hungry-delete
+  :ensure t
   :config
   (global-hungry-delete-mode)
   (setq hungry-delete-join-reluctantly t))
 
-
-
-(ivy-mode 1)
-(setq ivy-use-virtual-buffers t)
-(setq enable-recursive-minibuffers t)
-
-;; enable this if you want `swiper' to use it
-;; (setq search-default-mode #'char-fold-to-regexp)
-
+(use-package ivy
+  :ensure t
+  :diminish ivy-mode
+  :hook (after-init . ivy-mode)
+  :config
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  (setq search-default-mode #'char-fold-to-regexp))
 
 ;;(require 'quelpa)
 ;;(quelpa '(eaf :fetcher github
