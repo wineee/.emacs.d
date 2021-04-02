@@ -31,7 +31,7 @@
 (defun open-init-file()
   (interactive)
   (find-file "~/.emacs.d"))
-
+(require 'init-elpa)
 (require 'init-packages)
 (require 'init-ui)
 (require 'init-better-defaults)
@@ -50,7 +50,7 @@
 ;; Org-mode 管理 Emacs 配置
 (require 'org-install)
 (require 'ob-tangle)
-(org-babel-load-file (expand-file-name "org-file-name.org" user-emacs-directory))
+(org-babel-load-file (expand-file-name "lang-mode.org" user-emacs-directory))
 
 
 (provide 'init)
