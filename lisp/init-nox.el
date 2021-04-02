@@ -19,4 +19,8 @@
                ))
   (add-hook hook '(lambda () (nox-ensure))))
 
+(add-to-list 'nox-server-programs
+             `(python-mode . ("pyls" "-v" "--tcp" "--host"
+                              "localhost" "--port" :autoport)))
+
 (provide 'init-nox)
