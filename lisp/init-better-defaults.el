@@ -2,7 +2,7 @@
 (setq make-backup-files nil)
 
 ;; 关闭自动保存文件
-(setq auto-save-default nil)
+;; (setq auto-save-default nil)
 
 ;; 设置一个别名将其简化为只输入 (y or n)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -34,7 +34,7 @@
 ;; 缩写补全
 (abbrev-mode t)
 (define-abbrev-table 'global-abbrev-table'(
-					   ("k8s" "kubernetes")
+					   ("k8s~" "kubernetes")
 					   ))
 ;; 重新缩进所选区域的代码
 (defun indent-buffer()
@@ -64,21 +64,6 @@
 					try-complete-lisp-symbol-partially
 					try-complete-lisp-symbol))
 
-;; 让 Emacs 重用唯一的一个缓冲区作为 Dired Mode 显示专用缓冲区
-(put 'dired-find-alternate-file 'disabled nil)
-
-;; 主动加载 Dired Mode
-;; (require 'dired)
-;; (defined-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
-
-;; 延迟加载
-(with-eval-after-load 'dired
-  (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
-
-(require 'dired-x)
-
-(setq dired-dwin-target 1)
-
 ;; Occur 与普通的搜索模式不同的是，它可以使用 Occur-Edit Mode (在弹出的窗口中按 e 进入编辑模式) 对搜索到的结果进行之间的编辑
 (defun occur-dwim ()
   "Call `occur' with a sane default."
@@ -95,6 +80,7 @@
 (global-set-key (kbd "M-s o") 'occur-dwim)
 
 ;; 自动切换透明度
+(set-frame-parameter nil 'alpha '(90 . 85))
 (defun rew-toggle-frame-transparency ()
   (interactive)
   (if (equal (frame-parameter nil 'alpha) 100)

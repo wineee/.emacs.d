@@ -86,12 +86,9 @@
 ;;(require 'quelpa)
 ;;(quelpa '(eaf :fetcher github
 ;;              :repo  "manateelazycat/emacs-application-framework"
-;;              :files ("*")))
+;;              :files ("*"))
 
-
-(add-hook 'js2-mode-hook 'flycheck-mode)
-
-(add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode)
+(add-hook 'after-init-hook #'rainbow-delimiters-mode)
 (add-hook 'emacs-lisp-mode-hook #'nyan-mode)
 
 
@@ -99,9 +96,5 @@
 ;;      (list
 ;;       '(:eval (list (nyan-create)))
 ;;       ))
-
-;; yasnippet 是一个代码块补全的插件
-;;(yas-reload-all)
-;;(add-hook 'prog-mode-hook #'yas-minor-mode)
 
 (provide 'init-packages)

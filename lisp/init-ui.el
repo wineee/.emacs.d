@@ -26,6 +26,7 @@
 ;; (load-theme 'monokai 1)
 ;; (load-theme 'solarized-dark t)
 (use-package kaolin-themes
+  :ensure t
   :config
   (load-theme 'kaolin-bubblegum t)
   (kaolin-treemacs-theme))
