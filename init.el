@@ -31,8 +31,10 @@
 (defun open-init-file()
   (interactive)
   (find-file "~/.emacs.d"))
+
 (require 'init-elpa)
 (require 'init-packages)
+(require 'init-undotree)
 (require 'init-ui)
 (require 'init-better-defaults)
 (require 'init-org)
@@ -42,6 +44,7 @@
 (require 'init-meow)
 (require 'init-music)
 (require 'init-nox)
+(require 'init-flycheck)
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 
