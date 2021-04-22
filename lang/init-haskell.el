@@ -13,8 +13,11 @@
                                  '(warning . haskell-hlint))))
 
   (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
-
-  (add-auto-mode 'haskell-mode "\\.ghci\\'")
+  
+  (setq auto-mode-alist
+      (append
+       '(("\\.ghci\\'" . haskell-mode))
+       auto-mode-alist))
 
   ;; Indentation
   (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)

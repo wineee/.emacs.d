@@ -3,7 +3,10 @@
 ;;; Code:
 
 (when (maybe-require-package 'yaml-mode)
-  (add-auto-mode 'yaml-mode "\\.yml\\.erb\\'")
+  (setq auto-mode-alist
+      (append
+       '(("\\.yml\\.erb\\'" . yaml-mode))
+       auto-mode-alist))
   (add-hook 'yaml-mode-hook 'goto-address-prog-mode))
 
 

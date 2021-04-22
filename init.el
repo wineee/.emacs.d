@@ -1,4 +1,4 @@
-;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
+
 ;;(setq debug-on-error t)
 (let ((minver "25.1"))
   (when (version< emacs-version minver)
@@ -6,10 +6,10 @@
 (when (version< emacs-version "26.1")
   (message "Your Emacs is old, and some functionality in this config will be disabled. Please upgrade if possible."))
 
+;; ------ 解决 Emacs GC 占用内存高的问题 ------
+(setq gc-cons-threshold 100000000)
 
-;;----------------------------------------------------------------------------
 ;; Adjust garbage collection thresholds during startup, and thereafter
-;;----------------------------------------------------------------------------
 (let ((normal-gc-cons-threshold (* 20 1024 1024))
       (init-gc-cons-threshold (* 128 1024 1024)))
   (setq gc-cons-threshold init-gc-cons-threshold)
@@ -39,6 +39,7 @@
 (require 'init-nox)
 (require 'init-flycheck)
 
+(require 'init-cpp)
 (require 'init-js)
 (require 'init-nix)
 (require 'init-haskell)

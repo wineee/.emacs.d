@@ -1,10 +1,11 @@
+(require 'nodejs-repl)
+
 (setq auto-mode-alist
       (append
        '(("\\.js\\'" . js2-mode))
        '(("\\.html\\'" . web-mode))
        auto-mode-alist))
 
-(require 'nodejs-repl)
 
 ;; 缩减的大小的设置
 (defun my-web-mode-indent-setup ()
