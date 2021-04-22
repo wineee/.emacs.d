@@ -1,0 +1,7 @@
+/
+!/init.el
+!/test-startup.sh
+!/early-init.el
+!/lisp/*
+!/lang/*
+
