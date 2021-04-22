@@ -1,0 +1,9 @@
+[submodule "site-lisp/netease-cloud-music.el"]
+	path = site-lisp/netease-cloud-music.el
+	url = https://github.com/SpringHan/netease-cloud-music.el.git
+[submodule "site-lisp/emacs-application-framework"]
+	path = site-lisp/emacs-application-framework
+	url = https://github.com/manateelazycat/emacs-application-framework.git
+[submodule "site-lisp/nox"]
+	path = site-lisp/nox
+	url = https://github.com/manateelazycat/nox
