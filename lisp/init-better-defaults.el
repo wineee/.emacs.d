@@ -11,10 +11,14 @@
 (global-auto-revert-mode t)
 
 ;; 启用自动括号匹配
-(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+(smartparens-global-mode)
 
 ;; 开启全局 Company 补全
 (global-company-mode 1)
+
+;; 扩号
+(require 'smartparens-config)
+(add-hook 'after-init-hook #'smartparens-mode)
 
 ;; 关闭自动缩进
 ;; (electric-indent-mode -1)
@@ -26,10 +30,6 @@
 
 ;; 选中一段文字 之后输入一个字符会替换掉你选中部分的文字
 (delete-selection-mode 1)
-
-;; 扩号
-(require 'smartparens-config)
-(add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
 
 ;; 缩写补全
 (abbrev-mode t)

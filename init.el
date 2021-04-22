@@ -1,11 +1,3 @@
-;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
-;;; Commentary:
-
-;; This file bootstraps the configuration, which is divided into
-;; a number of other files.
-
-;;; Code:
-
 ;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 ;;(setq debug-on-error t)
 (let ((minver "25.1"))
@@ -26,7 +18,7 @@
 
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
-
+(add-to-list 'load-path "~/.emacs.d/lang")
 ;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
@@ -46,20 +38,11 @@
 (require 'init-nox)
 (require 'init-flycheck)
 
+(require 'init-js)
+
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
-
 (load-file custom-file)
-
-;; Org-mode 管理 Emacs 配置
-(require 'org-install)
-(require 'ob-tangle)
-(org-babel-load-file (expand-file-name "lang-mode.org" user-emacs-directory))
 
 
 (provide 'init)
-
-;; Local Variables:
-;; coding: utf-8
-;; no-byte-compile: t
-;; End:
 ;;; init.el ends here

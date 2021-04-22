@@ -1,6 +1,3 @@
-** web mod 
-#+BEGIN_SRC emacs-lisp
-;; js-2 mode
 (setq auto-mode-alist
       (append
        '(("\\.js\\'" . js2-mode))
@@ -38,15 +35,5 @@
 ;; js2-refactor 是一个用于重构 JavaScript 的插件
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (js2r-add-keybindings-with-prefix "C-c C-m")
-#+END_SRC
 
-
-** python mode
-#+BEGIN_SRC  emacs-lisp
-
-#+END_SRC
-
-** go mode
-#+BEGIN_SRC emacs-lisp
-
-#+END_SRC
+(provide 'init-js)

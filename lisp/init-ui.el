@@ -1,5 +1,5 @@
 ;; 显示行号
-;; (global-linum-mode 1)
+(global-linum-mode 1)
 
 ;; 更改光标的样式
 (setq-default cursor-type 'bar)
@@ -15,7 +15,6 @@
 
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
-
 ;; 高亮当前行
 (global-hl-line-mode 1)
 
@@ -23,13 +22,20 @@
 (setq frame-title-format "%b [%I] %f GNU/Emacs")
 
 ;; 安装主题
-;; (load-theme 'monokai 1)
-;; (load-theme 'solarized-dark t)
-(use-package kaolin-themes
+;;(use-package kaolin-themes
+;;  :ensure t
+;;  :config
+;;  (load-theme 'kaolin-bubblegum t)
+;;  (kaolin-treemacs-theme))
+
+(use-package dracula-theme
   :ensure t
   :config
-  (load-theme 'kaolin-bubblegum t)
-  (kaolin-treemacs-theme))
+  (load-theme 'dracula t))
+
+(use-package vscode-icon
+  :ensure t
+  :commands (vscode-icon-for-file))
 
 ;; 我们可以用下面代码将 Emacs 设置为开启默认全屏，
 ;; (setq initial-frame-alist (quote ((fullscreen . maximized))))
