@@ -4,4 +4,6 @@
 !/early-init.el
 !/lisp/*
 !/lang/*
-
+!/.gitmodules
+!/.gitignore
+!/readme.org

@@ -8,7 +8,6 @@
 
   (when (maybe-require-package 'flycheck-color-mode-line)
     (add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode)))
-;;(add-hook 'js2-mode-hook 'flycheck-mode)
 
 (provide 'init-flycheck)
 ;;; init-flycheck.el ends here
