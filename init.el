@@ -19,6 +19,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (add-to-list 'load-path "~/.emacs.d/lang")
+
 ;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
@@ -39,10 +40,14 @@
 (require 'init-flycheck)
 
 (require 'init-js)
+(require 'init-nix)
+(require 'init-haskell)
+(require 'init-toml)
+(require 'init-yaml)
+(require 'init-sql)
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
-
 
 (provide 'init)
 ;;; init.el ends here
