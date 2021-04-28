@@ -11,6 +11,7 @@
 (global-auto-revert-mode t)
 
 ;; 启用自动括号匹配
+(use-package smartparens :ensure t)
 (smartparens-global-mode)
 
 ;; 开启全局 Company 补全

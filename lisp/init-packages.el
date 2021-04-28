@@ -1,54 +1,11 @@
-
-(defvar my/packages '(
-	       ;; --- Auto-completion ---
-	       company
-	       rainbow-delimiters
-	       ;; --- Better Editor ---
-	       hungry-delete swiper
-	       counsel smartparens
-	       popwin expand-region
-	       iedit helm-ag
-	       auto-yasnippet
-
-	       which-key 
-	       ;; powerline
-	       dired-ranger
-	       ranger
-	       meow
-	       ;; --- Major Mode ---
-	       js2-mode
-	       go-mode
-	       web-mode
-	       elpy
-	       ;; --- Minor Mode ---
-	       nodejs-repl
-	       js2-refactor
-	       exec-path-from-shell
-	       org-pomodoro
-	       flycheck
-	       
-	       ;; --- Themes ---
-	       monokai-theme
-	       solarized-theme
-	       kaolin-themes
-	       nyan-mode
-	       all-the-icons
-
-	       ;; for eaf
-	       ctable deferred epc s
-	       use-package
-	       ;; nox need
-	       posframe
-	       ;; netease music need
-	       request
-	       ;; git manger
-	       magit
-	       ) "Default packages")
-(setq package-selected-packages my/packages)
-
-;; (require-package 'el-get)
-
 ;; (setq use-package-always-ensure t)
+
+(use-package company :ensure t)
+(use-package swiper :ensure t)
+(use-package iedit :ensure t)
+(use-package expand-region :ensure t)
+(use-package helm-ag :ensure t)
+(use-package elpy :ensure t)
 
 (use-package popwin
   :ensure t
@@ -87,8 +44,10 @@
 ;;(quelpa '(eaf :fetcher github
 ;;              :repo  "manateelazycat/emacs-application-framework"
 ;;              :files ("*"))
-
+(use-package rainbow-delimiters
+  :ensure t)
 (add-hook 'after-init-hook #'rainbow-delimiters-mode)
+(use-package nyan-mode :ensure t)
 (add-hook 'emacs-lisp-mode-hook #'nyan-mode)
 
 

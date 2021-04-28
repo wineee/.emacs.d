@@ -1,4 +1,14 @@
-(require 'nodejs-repl)
+(use-package nodejs-repl
+  :ensure t)
+
+(use-package js2-refactor
+  :ensure t)
+
+(use-package exec-path-from-shell
+  :ensure t)
+
+(use-package web-mode
+  :ensure t)
 
 (setq auto-mode-alist
       (append
