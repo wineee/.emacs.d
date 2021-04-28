@@ -1,4 +1,3 @@
-
 ;;(setq debug-on-error t)
 (let ((minver "25.1"))
   (when (version< emacs-version minver)
@@ -17,8 +16,8 @@
             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 
-(add-to-list 'load-path "~/.emacs.d/lisp")
-(add-to-list 'load-path "~/.emacs.d/lang")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lang" user-emacs-directory))
 
 ;; 快速打开配置文件
 (defun open-init-file()
