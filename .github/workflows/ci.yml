@@ -1,0 +1,39 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        emacs_version:
+          - 27.1
+          - 27.2
+          - snapshot
+    steps:
+    - uses: purcell/setup-emacs@master
+      with:
+        version: ${{ matrix.emacs_version }}
+
+    - uses: actions/checkout@v2
+    - name: Check startup
+      run: |
+        sed 's,https://mirrors.cloud.tencent.com/elpa/gnu/,https://elpa.gnu.org/packages/,' init.el -i
+        sed 's,https://mirrors.cloud.tencent.com/elpa/melpa/,https://melpa.org/packages/,' init.el -i
+        ${EMACS:=emacs} --version
+        echo "Attempting startup..."
+        ${EMACS:=emacs} -nw --batch --eval \
+        '(progn
+           (require (quote package))
+           (require (quote url-vars))
+           (let ((url-show-status nil)
+                 (user-emacs-directory default-directory)
+                 (user-init-file (expand-file-name "init.el"))
+                 (load-path (delq default-directory load-path)))
+             (load-file user-init-file)
+             (run-hooks (quote after-init-hook))
+             (run-hooks (quote emacs-startup-hook))))'
+        echo "Startup successful"
