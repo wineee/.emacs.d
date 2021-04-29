@@ -16,8 +16,8 @@
             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
 
 
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/lang" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 
 ;; 快速打开配置文件
 (defun open-init-file()
@@ -36,8 +36,9 @@
 (require 'init-meow)
 (require 'init-music)
 (require 'init-nox)
-(require 'init-flycheck)
+(require 'init-yasnippet)
 
+(require 'init-haskell)
 (require 'init-cpp)
 (require 'init-js)
 (require 'init-nix)
@@ -45,6 +46,9 @@
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-sql)
+
+(require-package 'sudo-edit)
+(require-package 'gnuplot)
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 (load-file custom-file)
