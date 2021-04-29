@@ -22,12 +22,6 @@
 (setq frame-title-format "%b [%I] %f GNU/Emacs")
 
 ;; 安装主题
-;;(use-package kaolin-themes
-;;  :ensure t
-;;  :config
-;;  (load-theme 'kaolin-bubblegum t)
-;;  (kaolin-treemacs-theme))
-
 (use-package dracula-theme
   :ensure t
   :config
