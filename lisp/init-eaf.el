@@ -1,4 +1,5 @@
 (use-package eaf
+  :ensure nil
   :load-path "~/.emacs.d/site-lisp/emacs-application-framework" 
   :init
   (use-package epc :defer t :ensure t)

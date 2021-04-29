@@ -31,7 +31,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 (eval-and-compile
-  (setq use-package-always-ensure nil)
+  (setq use-package-always-ensure t)
   (setq use-package-always-defer nil)
   (setq use-package-always-demand nil)
   (setq use-package-expand-minimally nil)
@@ -52,6 +52,7 @@
 (require 'init-nox)
 (require 'init-yasnippet)
 
+(require 'init-go)
 (require 'init-haskell)
 (require 'init-cpp)
 (require 'init-js)

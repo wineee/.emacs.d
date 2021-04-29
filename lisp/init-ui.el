@@ -11,7 +11,7 @@
 (menu-bar-mode -1)
 
 ;; 关闭文件滚动条
-(scroll-bar-mode -1)
+(scroll-bar-mode 0)
 
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)

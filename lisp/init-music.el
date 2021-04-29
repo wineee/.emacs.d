@@ -3,6 +3,7 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/netease-cloud-music.el")
 
 (use-package netease-cloud-music
+  :ensure nil
   :init
   (use-package request :defer t :ensure t)
   :config
