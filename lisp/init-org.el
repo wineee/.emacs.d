@@ -17,8 +17,9 @@
 ;;
 (global-set-key (kbd "C-c r") 'org-capture)
 
-;; <s Tab
-(require 'org-tempo)
+;; <s Tab https://emacs-china.org/t/org/16776/6
+;; (require org-tempo)
+
 ;; 输入 #+BEGIN_SRC…#+END_SRC 这一段
 (defun org-insert-src-block (src-code-type)
   "Insert a `SRC-CODE-TYPE' type source code block in org-mode."
