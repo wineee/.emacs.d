@@ -15,7 +15,7 @@
 
 
 ;; https://github.com/ralesi/ranger.el
-
+(use-package ranger)
 (ranger-override-dired-mode t)
 
 ;; helm-descbinds
