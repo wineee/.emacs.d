@@ -1,9 +1,10 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/nox")
 
 (use-package posframe :ensure t)
-(require 'nox)
-
-(dolist (hook (list
+(use-package nox
+  :ensure nil
+  :config
+  (dolist (hook (list
                'js-mode-hook
                'rust-mode-hook
                'python-mode-hook
@@ -18,9 +19,11 @@
                'haskell-mode-hook
                ))
   (add-hook hook '(lambda () (nox-ensure))))
-
-(add-to-list 'nox-server-programs
+  (add-to-list 'nox-server-programs
              `(python-mode . ("pyls" "-v" "--tcp" "--host"
                               "localhost" "--port" :autoport)))
+  )
+
+
 
 (provide 'init-nox)
