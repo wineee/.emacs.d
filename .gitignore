@@ -2,9 +2,9 @@
 !/init.el
 !/test-startup.sh
 !/early-init.el
-!/lisp/*
-!/lang/*
+!/lisp
+!/lang
 !/.gitmodules
 !/.gitignore
 !/readme.org
-!/site-lisp/*
+!/site-lisp
