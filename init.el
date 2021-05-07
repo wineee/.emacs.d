@@ -32,6 +32,7 @@
   (require 'use-package))
 
 (require 'init-packages)
+(require 'init-dashboard)
 (require 'init-undotree)
 (require 'init-ui)
 (require 'init-better-defaults)
