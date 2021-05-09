@@ -44,6 +44,8 @@
 (require 'init-music)
 (require 'init-nox)
 (require 'init-yasnippet)
+(require 'init-diminish)
+(require 'init-projectile)
 
 (require 'init-go)
 (require 'init-haskell)
