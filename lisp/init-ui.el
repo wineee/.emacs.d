@@ -34,6 +34,7 @@
   :ensure t
   :commands (vscode-icon-for-file))
 
+(use-package all-the-icons)
 ;; 我们可以用下面代码将 Emacs 设置为开启默认全屏，
 ;; (setq initial-frame-alist (quote ((fullscreen . maximized))))
 ;; (toggle-frame-fullscreen)
