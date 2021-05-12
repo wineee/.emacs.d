@@ -10,6 +10,7 @@
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "tool" user-emacs-directory))
 
 ;; 快速打开配置文件
 (defun open-init-file()
@@ -56,6 +57,8 @@
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-sql)
+
+(require 'init-reveal)
 
 (require-package 'sudo-edit)
 (require-package 'gnuplot)

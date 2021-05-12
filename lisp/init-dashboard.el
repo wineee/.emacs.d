@@ -9,6 +9,7 @@
 (use-package dashboard
   :ensure
   :init
+  (use-package all-the-icons :defer t :ensure t)
   (dashboard-setup-startup-hook)
   :config
   ;;(setq dashboard-banner-logo-title "Happy Emacs")
