@@ -18,4 +18,15 @@
   (setq eaf-proxy-host "127.0.0.1")
   (setq eaf-proxy-port "8889"))
 
+;; 用 eaf 打开链接
+(defun adviser-browser-url (orig-fn url &rest args)
+  (cond ((string-prefix-p "file:" url) (eww url))
+        ((and (commandp 'eaf-open-browser)
+              (display-graphic-p))
+         (eaf-open-browser url))
+        (t (apply orig-fn url args))))
+
+(advice-add #'browse-url :around #'adviser-browser-url)
+
+
 (provide 'init-eaf)
