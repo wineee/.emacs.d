@@ -8,17 +8,20 @@
 ;; ------ 解决 Emacs GC 占用内存高的问题 ------
 (setq gc-cons-threshold 100000000)
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
-(add-to-list 'load-path (expand-file-name "tool" user-emacs-directory))
+(add-hook 'emacs-startup-hook ; hook run after loading init files
+          (lambda ()
+            (setq gc-cons-threshold ian/gc-cons-threshold
+                  gc-cons-percentage 0.1
+                  file-name-handler-alist file-name-handler-alist-original)))
 
 ;; 快速打开配置文件
 (defun open-init-file()
   (interactive)
   (find-file "~/.emacs.d"))
 
-(require 'init-elpa)
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
+(require 'init-elpa)
 ;; Bootstrap `use-package'
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -48,6 +51,7 @@
 (require 'init-diminish)
 (require 'init-projectile)
 
+(add-to-list 'load-path (expand-file-name "lang" user-emacs-directory))
 (require 'init-go)
 (require 'init-haskell)
 (require 'init-cpp)
@@ -58,6 +62,7 @@
 (require 'init-yaml)
 (require 'init-sql)
 
+(add-to-list 'load-path (expand-file-name "tool" user-emacs-directory))
 (require 'init-reveal)
 
 (require-package 'sudo-edit)
