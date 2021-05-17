@@ -11,8 +11,7 @@
 (menu-bar-mode -1)
 
 (if (display-graphic-p)
-    (progn      
-      ;; (tool-bar-mode -1)
+    (progn
       ;; 关闭文件滚动条
       (scroll-bar-mode -1)))
 
@@ -56,7 +55,7 @@
 
 (use-package ivy-rich
   :ensure t
-  :init (ivy-rich-mode 1))
+  :config (ivy-rich-mode 1))
 
 ;;(setq url-proxy-services
 ;;      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
