@@ -53,19 +53,6 @@
   :init (all-the-icons-ivy-rich-mode 1)
   :config (setq inhibit-compacting-font-caches t))
 
-(use-package ivy-rich
-  :ensure t
-  :config (ivy-rich-mode 1))
-
-;;(setq url-proxy-services
-;;      '(("no_proxy" . "^\\(localhost\\|10.*\\)")
-;;	("http" . "http://127.0.0.1:8889")))
-
-;;(setq url-http-proxy-basic-auth-storage
-;;      (list (list "http://proxy.com:8080"
-;;		  (cons "Input your LDAP UID !"
-;;			(base64-encode-string "LOGIN:PASSWORD")))))
-
 (use-package doom-modeline
   :ensure t
   :defer t
