@@ -64,6 +64,7 @@
 
 (add-to-list 'load-path (expand-file-name "tool" user-emacs-directory))
 (require 'init-reveal)
+(require 'init-telega)
 
 (require-package 'sudo-edit)
 (require-package 'gnuplot)
