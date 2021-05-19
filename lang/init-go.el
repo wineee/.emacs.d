@@ -13,6 +13,12 @@
 ;;   (ac-config-default)
 ;;   )
 
+;; emacs golang 模式tab宽度设置为2
+(add-hook 'go-mode-hook
+          (lambda ()
+            (setq indent-tabs-mode 1)
+            (setq tab-width 2)))
+
 (when (memq window-system '(mac ns))
   (use-package exec-path-from-shell)
   (exec-path-from-shell-initialize)
@@ -30,11 +36,11 @@
     )
   )
 
-(use-package go-eldoc
-  :config
-  (progn
-    (add-hook 'go-mode-hook 'go-eldoc-setup)
-    ))
+;;(use-package go-eldoc
+;;  :config
+;;  (progn
+;;    (add-hook 'go-mode-hook 'go-eldoc-setup)
+;;    ))
 
 (use-package go-guru
   :defer t
