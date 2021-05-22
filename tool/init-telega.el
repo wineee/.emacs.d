@@ -2,7 +2,7 @@
 ;; 请确保你安装了 tdlib 库。
 ;; Emacs下telegram的客户端，默认不开启
 
-;; yay -S telegram-tdlib
+;; yay -S libtd-git 
 
 (use-package telega
   :ensure t
