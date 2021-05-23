@@ -1,6 +1,5 @@
 ;;; package --- Summary
-;;; Commentary:
- 
+;;; Commentary: 
  
 ;;; Code:
  
@@ -15,9 +14,9 @@
   ;;(setq dashboard-banner-logo-title "Happy Emacs")
   (setq dashboard-startup-banner 1)
   (setq dashboard-items
-        '((recents . 5)
+        '((recents . 6)
           (bookmarks . 5)
-          (projects . 3)
+          (projects . 6)
           (agenda . 5)))
   (setq dashboard-set-navigator nil)
   (setq dashboard-footer-icon (all-the-icons-octicon "dashboard"
