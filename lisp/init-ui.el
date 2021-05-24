@@ -46,6 +46,8 @@
   (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
   (ivy-posframe-mode 1))
 
+(use-package ivy-rich)
+(ivy-rich-mode 1)
 
 ;; M-x all-the-icons-install-fonts
 (use-package all-the-icons-ivy-rich
