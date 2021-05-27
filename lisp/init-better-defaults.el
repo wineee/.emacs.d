@@ -39,7 +39,7 @@
 ;; 加入最近打开过文件的选项
 (require 'recentf)
 (recentf-mode 1)
-(setq recentf-max-menu-item 10)
+(setq recentf-max-menu-item 20)
 
 ;; 选中一段文字 之后输入一个字符会替换掉你选中部分的文字
 (delete-selection-mode 1)
