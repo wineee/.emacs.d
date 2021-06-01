@@ -29,6 +29,8 @@
 ;;=========================================
 (global-set-key (kbd "S-<left>") 'split-window-horizontally)
 (global-set-key (kbd "S-<down>") 'split-window-below)
+(global-set-key (kbd "S-<right>") 'split-window-horizontally)
+(global-set-key (kbd "S-<up>") 'split-window-below)
 
 ;;修改分屏大小
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)

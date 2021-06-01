@@ -23,7 +23,6 @@
 	meow-keypad-mode-p
 	))
 
-
 (autoload #'toggle-input-method "rime" nil t)
 
 (global-set-key (kbd "S-SPC") 'toggle-input-method)
