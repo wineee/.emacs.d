@@ -64,7 +64,7 @@
 
 (add-to-list 'load-path (expand-file-name "tool" user-emacs-directory))
 (require 'init-reveal)
-(require 'init-telega)
+;; (require 'init-telega)
 (require 'init-rime)
 
 (require-package 'sudo-edit)

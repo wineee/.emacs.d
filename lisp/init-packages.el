@@ -47,8 +47,6 @@
 (use-package rainbow-delimiters
   :ensure t)
 (add-hook 'after-init-hook #'rainbow-delimiters-mode)
-(use-package nyan-mode :ensure t)
-(add-hook 'emacs-lisp-mode-hook #'nyan-mode)
 
 
 ;;(setq mode-line-format

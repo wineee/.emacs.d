@@ -24,17 +24,17 @@
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "GOPATH"))
 
-(use-package company-go
-  :init
-  (progn
-    (setq company-go-show-annotation t)
-    (setq company-tooltip-limit 20)                      ; bigger popup window
-    (add-hook 'go-mode-hook 
-              (lambda ()
-                (set (make-local-variable 'company-backends) '(company-go))
-                (company-mode)))
-    )
-  )
+;;(use-package company-go
+;;  :init
+;;  (progn
+;;    (setq company-go-show-annotation t)
+;;    (setq company-tooltip-limit 20)                      ; bigger popup window
+;;    (add-hook 'go-mode-hook 
+;;              (lambda ()
+;;                (set (make-local-variable 'company-backends) '(company-go))
+;;               (company-mode)))
+;;    )
+;;  )
 
 ;;(use-package go-eldoc
 ;;  :config
@@ -42,9 +42,9 @@
 ;;    (add-hook 'go-mode-hook 'go-eldoc-setup)
 ;;    ))
 
-(use-package go-guru
-  :defer t
-  :hook (go-mode . go-guru-hl-identifier-mode))
+;;(use-package go-guru
+;;  :defer t
+;;  :hook (go-mode . go-guru-hl-identifier-mode))
 
 ;; go get -u -v golang.org/x/tools/cmd/...
 ;; go get -u -v github.com/rogpeppe/godef

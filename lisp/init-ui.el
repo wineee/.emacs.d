@@ -23,11 +23,42 @@
 ;; 标题栏显示文件及路径信息
 (setq frame-title-format "%b [%I] %f GNU/Emacs")
 
+;; (use-package nyan-mode :ensure t)
+;; (add-hook 'emacs-lisp-mode-hook #'nyan-mode)
+
+;; modeline 上的滑动栏
+;;(use-package mlscroll
+;;  :ensure t
+;;  :init
+;;  (which-function-mode 1)
+;;  :config
+;;  (setq mlscroll-shortfun-min-width 11) 
+;;  (mlscroll-mode 1))
+
 ;; 安装主题
-(use-package dracula-theme
+;;(use-package dracula-theme
+;;  :ensure t
+;;  :config
+;;  (load-theme 'dracula t))
+
+(use-package doom-themes
   :ensure t
   :config
-  (load-theme 'dracula t))
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'dracula t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; or for treemacs users
+  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  (doom-themes-treemacs-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
+
 
 (use-package all-the-icons
   :when (display-graphic-p)
