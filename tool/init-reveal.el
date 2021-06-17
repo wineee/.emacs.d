@@ -1,3 +1,4 @@
+;; org 写幻灯片的神器
 ;;; https://github.com/yjwen/org-reveal
 
 ;;Requirements and Installation
