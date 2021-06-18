@@ -61,6 +61,7 @@
 (require 'init-toml)
 (require 'init-yaml)
 (require 'init-sql)
+(require 'init-racket)
 
 (add-to-list 'load-path (expand-file-name "tool" user-emacs-directory))
 (require 'init-reveal)
