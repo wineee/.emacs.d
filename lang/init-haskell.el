@@ -5,7 +5,7 @@
 (when (maybe-require-package 'haskell-mode)
   (add-hook 'haskell-mode-hook 'subword-mode)
   (add-hook 'haskell-cabal-mode 'subword-mode)
-
+  ;; dante – gives IDE features via ghci, see https://github.com/jyp/dante#installation
   (when (maybe-require-package 'dante)
     (add-hook 'haskell-mode-hook 'dante-mode)
     (with-eval-after-load 'dante
@@ -47,7 +47,6 @@
     (add-to-list 'page-break-lines-modes 'haskell-mode)))
 
 
-
 (define-minor-mode stack-exec-path-mode
   "If this is a stack project, set `exec-path' to the path \"stack exec\" would use."
   nil
@@ -68,13 +67,8 @@
 
 (add-hook 'haskell-mode-hook 'stack-exec-path-mode)
 
-
-
 (when (maybe-require-package 'dhall-mode)
   (add-hook 'dhall-mode-hook 'stack-exec-path-mode))
-
-
-
 
 (provide 'init-haskell)
 ;;; init-haskell.el ends here

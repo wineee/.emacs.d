@@ -7,7 +7,6 @@
   (dolist (hook '(css-mode-hook html-mode-hook sass-mode-hook))
     (add-hook hook 'rainbow-mode)))
 
-
 ;;; Embedding in html
 (require-package 'mmm-mode)
 (with-eval-after-load 'mmm-vars
