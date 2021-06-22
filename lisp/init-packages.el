@@ -5,7 +5,6 @@
 (use-package iedit :ensure t)
 (use-package expand-region :ensure t)
 (use-package helm-ag :ensure t)
-(use-package elpy :ensure t)
 
 (use-package popwin
   :ensure t
@@ -44,10 +43,6 @@
 ;;(quelpa '(eaf :fetcher github
 ;;              :repo  "manateelazycat/emacs-application-framework"
 ;;              :files ("*"))
-(use-package rainbow-delimiters
-  :ensure t)
-(add-hook 'after-init-hook #'rainbow-delimiters-mode)
-
 
 ;;(setq mode-line-format
 ;;      (list

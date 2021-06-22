@@ -2,6 +2,24 @@
 ;;; Commentary:
 ;;; Code:
 
+;; 快捷插入符号
+
+(defun c-insert-arrow-1 ()
+  (interactive)
+  (let (p)
+    (save-excursion
+      (backward-sexp)
+      (cond ((looking-at-p "\<\-")
+	     (insert "->") (delete-char 2))
+	    ((looking-at-p "\-\>")
+	     (insert "<-") (delete-char 2))
+	    (t (setq p t))))
+    (when p (insert "->"))))
+
+(defun c-insert-arrow-2 ()
+  (interactive)
+  (insert "=>"))
+
 (when (maybe-require-package 'haskell-mode)
   (add-hook 'haskell-mode-hook 'subword-mode)
   (add-hook 'haskell-cabal-mode 'subword-mode)
@@ -69,6 +87,14 @@
 
 (when (maybe-require-package 'dhall-mode)
   (add-hook 'dhall-mode-hook 'stack-exec-path-mode))
+
+(defun c-haskell-load-module ()
+  (interactive)
+  (let ((module (buffer-name)))
+    (save-buffer)
+    (switch-to-haskell)
+    (insert (concat ":load " module))
+    (comint-send-input)))
 
 (provide 'init-haskell)
 ;;; init-haskell.el ends here
