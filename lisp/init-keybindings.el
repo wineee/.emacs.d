@@ -1,9 +1,6 @@
-;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
-(global-set-key (kbd "<f2>") 'open-init-file)
+(global-set-key (kbd "M-s i") 'counsel-imenu)
 
 (global-set-key (kbd "C-x R") 'recentf-open-files)
-
-(global-set-key (kbd "M-s i") 'counsel-imenu)
 
 (global-set-key (kbd "C-d") 'backward-kill-word)
 
@@ -11,6 +8,23 @@
 (global-set-key (kbd "M-s e") 'iedit-mode)
 ;; (global-set-key (kbd "M-s o") ')
 
+
+;; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+;; 快速打开配置文件
+(defun open-init-file()
+  (interactive)
+  (find-file "~/.emacs.d"))
+
+;; 这一行代码，将函数 open-init-file 绑定到 <f2> 键上
+(global-set-key (kbd "<f2>") 'open-init-file)
+
+(defun open-eaf-file()
+  (interactive)
+  (find-file "~/.emacs.d/site-lisp/emacs-application-framework"))
+
+(global-set-key (kbd "C-x E") 'open-eaf-file)
+
+;; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ;; 命令 行搜索工具 ag
 (global-set-key (kbd "C-c p s") 'helm-do-ag-project-root)
 

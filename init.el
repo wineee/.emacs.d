@@ -14,11 +14,6 @@
                   gc-cons-percentage 0.1
                   file-name-handler-alist file-name-handler-alist-original)))
 
-;; 快速打开配置文件
-(defun open-init-file()
-  (interactive)
-  (find-file "~/.emacs.d"))
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'init-elpa)
@@ -67,6 +62,7 @@
 (require 'init-reveal)
 ;; (require 'init-telega)
 (require 'init-rime)
+(require 'init-youdao)
 
 (require-package 'sudo-edit)
 (require-package 'gnuplot)
