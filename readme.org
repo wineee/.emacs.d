@@ -1,3 +1,6 @@
+
+* 暂时转到 doom-emacs 了
+
 * Emacs配置
 
 ** TODO
